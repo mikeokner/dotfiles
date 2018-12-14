@@ -1,0 +1,22 @@
+[user]
+name = Michael Okner
+email = michael@okner.com
+signingkey = F3B4525B662B2EA838DB51A388D8B6FDD2686656
+
+[color]
+ui = auto
+
+[alias]
+hist = log --pretty=format:\"%C(yellow)%h%C(reset) %C(green)%ad%C(reset) %C(red)|%C(reset) %s %C(bold blue)[%an]%C(reset)%C(yellow)%d%C(reset)\" --graph --date=short
+
+[commit]
+gpgsign = true
+
+[transfer]
+fsckobjects = true
+
+[fetch]
+fsckobjects = true
+
+[receive]
+fsckobjects = true
