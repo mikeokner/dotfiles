@@ -68,19 +68,7 @@ set nowritebackup
 endif
 
 " KEYBOARD MAPPINGS
-" nmap is when you're in command mode
-" imap is insert mode.
-" F2 saves file
-nmap <F2> :w<CR>
-imap <F2> <ESC>:w<CR>a
-" F3 saves and quits 
-nmap <F3> :wq<cr>
-imap <F3> <ESC>:wq<CR>
-" F4 toggles windows
-nmap <F4> <C-w><C-w>
-imap <F4> <ESC><C-w><C-w>
 " Space removes search highlighting
-" Slap that bitch to get rid of the yellow.
 nmap <SPACE> :noh<CR>
 
 " Syntastic setup  (https://github.com/scrooloose/syntastic)
