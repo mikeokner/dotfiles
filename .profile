@@ -20,7 +20,7 @@ alias less='less -RFX'  # Color
 alias crontab='VIM_CRONTAB=true crontab'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias ls='ls -AG'
-alias cat='colorize'
+alias cat='pygmentize -g'
 #alias git=hub
 alias ssh='assh wrapper ssh'
 alias weather='curl http://wttr.in/Chesterfield,%20MO'
