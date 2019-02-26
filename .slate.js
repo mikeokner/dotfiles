@@ -1,16 +1,26 @@
 // Configuration
 S.cfga({
-    'modalEscapeKey':'esc'
+    'modalEscapeKey': 'esc'
 });
 
 // Monitors
-var mon_laptop = '1440x900';
-var mon_ext = '1920x1080';
+var mon_laptop = '1680x1050';
+var mon_ext = '2560x1440';
 
 // Operations
-var focus_macvim = S.op('focus', {'app':'macvim'});
-var hide_extras = S.op('hide', {'app':['iTunes', 'Messages', 'Calendar', 'MacVim']});
-var show_extras = S.op('show', {'app':['Messages', 'Calendar', 'MacVim']});
+var focus_iterm = S.op('focus', {'app': 'iTerm2'});
+var focus_slack = S.op('focus', {'app': 'Slack'});
+var focus_firefox = S.op('focus', {'app': 'Firefox'});
+var hide_extras = S.op('hide', {'app': [
+    'Google Chrome',
+    'Microsoft Outlook',
+    'Microsoft Teams'
+]});
+var show_extras = S.op('show', {'app': [
+    'Google Chrome',
+    'Microsoft Outlook',
+    'Microsoft Teams'
+]});
 
 // Moves
 var main_full = S.op('move', {
@@ -22,90 +32,93 @@ var main_full = S.op('move', {
 var main_center = S.op('move', {
     'x': 'screenOriginX + screenSizeX/8',
     'y': 'screenOriginY + screenSizeY/8',
-    'width' :'(screenSizeX/4) * 3',
-    'height' :'(screenSizeY/4) * 3'
+    'width': '(screenSizeX/4) * 3',
+    'height': '(screenSizeY/4) * 3'
 });
-var main_top = main_full.dup({'height':'screenSizeY/2'});
-var main_bottom = main_top.dup({'y':'screenOriginY + screenSizeY/2'});
-var main_left = main_full.dup({'width':'screenSizeX/2'});
-var main_right = main_left.dup({'x':'screenOriginX + screenSizeX/2'});
+var main_top = main_full.dup({'height': 'screenSizeY/2'});
+var main_bottom = main_top.dup({'y': 'screenOriginY + screenSizeY/2'});
+var main_left = main_full.dup({'width': 'screenSizeX/2'});
+var main_right = main_left.dup({'x': 'screenOriginX + screenSizeX/2'});
 
-var lap_full = main_full.dup({'screen':mon_laptop});
-var lap_center = main_center.dup({'screen':mon_laptop});
-var lap_top = main_top.dup({'screen':mon_laptop});
-var lap_bottom = main_bottom.dup({'screen':mon_laptop});
-var lap_left = main_left.dup({'screen':mon_laptop});
-var lap_right = main_right.dup({'screen':mon_laptop});
+var lap_full = main_full.dup({'screen': mon_laptop});
+var lap_center = main_center.dup({'screen': mon_laptop});
+var lap_top = main_top.dup({'screen': mon_laptop});
+var lap_bottom = main_bottom.dup({'screen': mon_laptop});
+var lap_left = main_left.dup({'screen': mon_laptop});
+var lap_right = main_right.dup({'screen': mon_laptop});
 
-var ext_full = main_full.dup({'screen':mon_ext});
-var ext_center = main_center.dup({'screen':mon_ext});
-var ext_top = main_top.dup({'screen':mon_ext});
-var ext_bottom = main_bottom.dup({'screen':mon_ext});
-var ext_left = main_left.dup({'screen':mon_ext});
-var ext_right = main_right.dup({'screen':mon_ext});
-
-var chatbar = S.op('corner', {
-    'screen': mon_laptop,
-    'direction': 'top-left'
-});
-var msgwindow = S.op('move', {
-    'screen': mon_laptop,
-    'x': 'screenOriginX + screenSizeX/6',
-    'y': 'screenOriginY',
-    'width': 820,
-    'height': 620,
-});
+var ext_full = main_full.dup({'screen': mon_ext});
+var ext_center = main_center.dup({'screen': mon_ext});
+var ext_top = main_top.dup({'screen': mon_ext});
+var ext_bottom = main_bottom.dup({'screen': mon_ext});
+var ext_left = main_left.dup({'screen': mon_ext});
+var ext_right = main_right.dup({'screen': mon_ext});
 
 var two_monitor_layout = S.lay('twoMonitor', {
-    '_before_':{'operations':[show_extras]},
-    '_after_':{'operations':[focus_macvim]},
-    'Firefox':{
-        'operations':[ext_full]
+    '_before_': {'operations': [show_extras]},
+    '_after_': {'operations': [focus_slack]},
+    'Firefox': {
+        'operations': [ext_left],
+        'repeat': true
     },
-    'Google Chrome':{
-        'operations':[ext_full]
+    'Google Chrome': {
+        'operations': [ext_left],
+        'repeat': true
     },
-    'iTerm':{
-        'operations':[ext_full]
+    'iTerm2': {
+        'operations': [ext_right]
     },
-    'Skype':{
-        'operations':[lap_full]
+    'MacVim': {
+        'operations': [ext_left],
+        'repeat': true
     },
-    'Messages':{
-        'operations':[chatbar, msgwindow],
-        'title-order':["Buddies"]
+    'Slack': {
+        'operations': [lap_full]
     },
-    'MacVim':{
-        'operations':[ext_left, ext_right],
-        'repeat':true
+    'Microsoft Outlook': {
+        'operations': [lap_full]
     },
-    'iTunes':{
-        'operations':[lap_full]
+    'Microsoft Teams': {
+        'operations': [lap_full]
     }
 });
 
 var one_monitor_layout = S.lay('oneMonitor', {
-    '_after_':{'operations':[hide_extras]},
-    'Firefox':{
-        'operations':[lap_full]
+    '_after_': {'operations': [hide_extras, focus_firefox]},
+    'Firefox': {
+        'operations': [lap_full],
+        'repeat': true
     },
-    'Google Chrome':{
-        'operations':[lap_full]
+    'Google Chrome': {
+        'operations': [lap_full],
+        'repeat': true
     },
-    'iTerm':{
-        'operations':[lap_full]
+    'iTerm2': {
+        'operations': [lap_full]
     },
-    'MacVim':{
-        'operations':[lap_full],
-        'repeat':true
+    'MacVim': {
+        'operations': [lap_full],
+        'repeat': true
+    },
+    'Slack': {
+        'operations': [lap_full]
+    },
+    'Microsoft Outlook': {
+        'operations': [lap_full]
+    },
+    'Microsoft Teams': {
+        'operations': [lap_full]
+    },
+    'Microsoft OneNote': {
+        'operations': [lap_full]
     }
 });
 
 // Bind default layouts
 S.def([mon_laptop, mon_ext], two_monitor_layout);
 S.def([mon_laptop], one_monitor_layout);
-var two_monitor = S.op('layout', {'name':two_monitor_layout});
-var one_monitor = S.op('layout', {'name':one_monitor_layout});
+var two_monitor = S.op('layout', {'name': two_monitor_layout});
+var one_monitor = S.op('layout', {'name': one_monitor_layout});
 function universal_layout() {
     if (S.screenCount() === 2) {
         two_monitor.run();
