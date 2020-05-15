@@ -9,7 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="agnoster"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+. /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 #export ZSH_2000_DISABLE_RVM=true
 
 # Uncomment the following line to use case-sensitive completion.
@@ -62,7 +63,7 @@ plugins=(
     python
     tmux
     cp           # Add progress bar to cp
-    colored-man  # Colorize man pages
+    colored-man-pages  # Colorize man pages
     colorize     # Syntax highlighting on cat dumps
     copyfile     # Copy contents of file
     copydir      # Copy pwd

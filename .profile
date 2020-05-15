@@ -20,37 +20,42 @@ alias less='less -RFX'  # Color
 alias crontab='VIM_CRONTAB=true crontab'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias ls='ls -AG'
-alias cat='pygmentize -g'
+alias cat='ccat'
 #alias git=hub
 alias ssh='assh wrapper ssh'
 alias weather='curl http://wttr.in/Chesterfield,%20MO'
+alias tmux='tmux attach -d || tmux'
 
 # Init nvm
 export NVM_DIR="$HOME/.nvm"
 . $NVM_DIR/nvm.sh
-nvm use v10
+nvm use v14
 
 # RVM
-export PATH="$PATH:$HOME/.rvm/bin"
-. $HOME/.rvm/scripts/rvm
-rvm use 2.2.3
+#export PATH="$PATH:$HOME/.rvm/bin"
+#. $HOME/.rvm/scripts/rvm
+#rvm use 2.2.3
 
 # Rust
-export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
 
 # Golang
-export GOPATH="$HOME/Documents/Code/Go"
-export PATH="$GOPATH/bin:$PATH"
+#export GOPATH="$HOME/Documents/Code/Go"
+#export PATH="$GOPATH/bin:$PATH"
 
 # Java
-export JAVA_VERSION='1.8'
-export JAVA_HOME="$(/usr/libexec/java_home $JAVA_VERSION)"
-export SCALA_HOME="/usr/local/Cellar/scala/2.12.4/libexec"
-export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=512m"
-export M2_HOME="/usr/local/Cellar/maven/3.3.9/libexec"
+#export JAVA_VERSION='1.8'
+#export JAVA_HOME="$(/usr/libexec/java_home $JAVA_VERSION)"
+#export SCALA_HOME="/usr/local/Cellar/scala/2.12.4/libexec"
+#export MAVEN_OPTS="-Xmx1024M -XX:MaxPermSize=512m"
+#export M2_HOME="/usr/local/Cellar/maven/3.3.9/libexec"
 
 # Add aws completion
-. /usr/local/share/zsh/site-functions/_aws
+#. /usr/local/share/zsh/site-functions/_aws
+
+# GCP
+#. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+#. /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # Ansible
 export ANSIBLE_NOCOWS=1
@@ -64,3 +69,6 @@ ssm() {
     sleep 1
     aws ssm list-command-invocations --command-id $CMD_ID --details | jq -r .CommandInvocations[0].CommandPlugins[0].Output
 }
+
+# Local scripts
+export PATH="$HOME/bin:$PATH"

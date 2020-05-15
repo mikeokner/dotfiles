@@ -4,11 +4,11 @@ S.cfga({
 });
 
 // Monitors
-var mon_laptop = '1680x1050';
-var mon_ext = '2560x1440';
+var mon_laptop = '1792x1120';  // 16" MacBook Pro
+var mon_ext = '3840x2160';  // 4k external
 
 // Operations
-var focus_iterm = S.op('focus', {'app': 'iTerm2'});
+var focus_iterm = S.op('focus', {'app': 'iTerm'});
 var focus_slack = S.op('focus', {'app': 'Slack'});
 var focus_firefox = S.op('focus', {'app': 'Firefox'});
 var hide_extras = S.op('hide', {'app': [
@@ -65,7 +65,7 @@ var two_monitor_layout = S.lay('twoMonitor', {
         'operations': [ext_left],
         'repeat': true
     },
-    'iTerm2': {
+    'iTerm': {
         'operations': [ext_right]
     },
     'MacVim': {
@@ -93,7 +93,7 @@ var one_monitor_layout = S.lay('oneMonitor', {
         'operations': [lap_full],
         'repeat': true
     },
-    'iTerm2': {
+    'iTerm': {
         'operations': [lap_full]
     },
     'MacVim': {

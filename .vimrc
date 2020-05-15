@@ -68,6 +68,8 @@ set nowritebackup
 endif
 
 " KEYBOARD MAPPINGS
+" nmap is when you're in command mode
+" imap is insert mode.
 " Space removes search highlighting
 nmap <SPACE> :noh<CR>
 
