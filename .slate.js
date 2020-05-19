@@ -5,7 +5,7 @@ S.cfga({
 
 // Monitors
 var mon_laptop = '1792x1120';  // 16" MacBook Pro
-var mon_ext = '3840x2160';  // 4k external
+var mon_ext = '2560x1440';  // 4k external
 
 // Operations
 var focus_iterm = S.op('focus', {'app': 'iTerm'});
