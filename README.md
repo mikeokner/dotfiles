@@ -54,6 +54,7 @@ And my MacVim window looks like:
         - `nvm`
         - `zsh`
     - `brew cask`
+        - `aerial`
         - `docker`
         - `intellij-idea-ce`
         - `iterm2`
