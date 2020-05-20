@@ -13,19 +13,9 @@ And my MacVim window looks like:
 ## Setup
 
 - Install:
-    - Firefox
-        - ublock origin
-        - React dev tools
-    - iTerm
-    - IntelliJ
-    - Slack
-    - Chrome
-        - ublock origin
-    - Slate
-    - Xcode
-    - Docker
-    - Karabiner
     - `xcode-select --install`
+    - `brew tap`
+        - `sambadevi/powerlevel9k`
     - `brew`
         - `assh`
         - `powerlevel9k`
@@ -57,10 +47,27 @@ And my MacVim window looks like:
         - `nmap`
         - `libevent`
         - `ncurses`
+        - `osx-cpu-temp`
         - `pipenv`
         - `reattach-to-user-namespace`
         - `tmux`
         - `nvm`
         - `zsh`
+    - `brew cask`
+        - `docker`
+        - `intellij-idea-ce`
+        - `iterm2`
+        - `karabiner-elements`
+        - `microsoft-teams`
+        - `slack`
+        - `slate`
+        - `zoom`
 - Copy dotfiles to home dir
+- clone oh-my-zsh
 - Ensure SSH dir is configured as expected, gen keys
+    - Firefox
+        - ublock origin
+        - React dev tools
+    - Chrome
+        - ublock origin
+    - Xcode
