@@ -72,3 +72,11 @@ ssm() {
 
 # Local scripts
 export PATH="$HOME/bin:$PATH"
+
+# Terraform
+alias tf='terraform'
+alias tf11='tfenv use 0.11.14'
+alias tf12='tfenv use 0.12.29'
+alias tf13='tfenv use 0.13.0'
+tf13
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/provider_cache"

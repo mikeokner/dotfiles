@@ -102,6 +102,7 @@ plugins=(
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 . $HOME/.profile
+eval "$(_POLICY_SENTRY_COMPLETE=source_zsh policy_sentry)"
 
 echo "Welcome back."
 #fortune | cowsay | lolcat -a -s 250

@@ -16,6 +16,7 @@ And my MacVim window looks like:
     - `xcode-select --install`
     - `brew tap`
         - `sambadevi/powerlevel9k`
+        - `salesforce/policy_sentry https://github.com/salesforce/policy_sentry`
     - `brew`
         - `assh`
         - `powerlevel9k`
@@ -38,6 +39,7 @@ And my MacVim window looks like:
         - `kubernetes-cli`
         - `lua`
         - `perl`
+        - `policy_sentry`
         - `readline`
         - `ruby`
         - `terraform`
@@ -50,6 +52,7 @@ And my MacVim window looks like:
         - `osx-cpu-temp`
         - `pipenv`
         - `reattach-to-user-namespace`
+        - `tfenv`
         - `tmux`
         - `nvm`
         - `zsh`
